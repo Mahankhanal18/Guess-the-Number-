@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guess the Number Game</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
+</head>
+<body class="bg-gradient-light flex items-center justify-center min-h-screen transition-all duration-500">
+  <div class="toggle-theme-btn absolute top-4 right-4 cursor-pointer p-2 bg-gray-200 rounded-full shadow-lg transition">
+    <span id="themeIcon" class="material-icons text-gray-600">brightness_4</span>
+  </div>
+
+  <div class="bg-white shadow-lg rounded-lg p-8 text-center max-w-md animate-fade-in transition-all">
+    <h1 class="text-3xl font-bold text-gray-800 mb-4">🎲 Guess the Number</h1>
+    <p class="text-gray-600 mb-4">Guess a number between <span class="font-bold">1</span> and <span class="font-bold">100</span></p>
+    <p class="text-xs text-gray-500 mb-6 italic">Hint: The correct answer is always the same.</p>
+
+    <p id="attemptCounter" class="text-sm text-blue-700 mb-4">Attempts: 0</p>
+
+    <input
+      type="number"
+      id="guessInput"
+      class="border p-2 w-full text-center mb-4 transition focus:ring focus:ring-indigo-300"
+      placeholder="Enter your guess"
+    />
+
+    <button onclick="Game.checkGuess()" class="bg-indigo-500 text-white w-full py-2 rounded hover:bg-indigo-600 transition mb-2">
+      <span class="material-icons">play_arrow</span> Guess
+    </button>
+    <button onclick="Game.restartGame()" id="restartButton" class="bg-gray-500 text-white w-full py-2 rounded hidden hover:bg-gray-600 transition">
+      <span class="material-icons">refresh</span> Restart
+    </button>
+
+    <p id="result" class="text-lg font-semibold mt-6"></p>
+  </div>
+
+  <script src="script.js"></script> <!-- Link to the JavaScript file -->
+</body>
+</html>
